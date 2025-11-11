@@ -1,0 +1,110 @@
+# Derived from sourcehut's policy: <https://man.sr.ht/robots.txt>
+
+User-agent: *
+Allow: /
+
+# Too aggressive, marketing/SEO
+User-agent: SemrushBot
+Disallow: /
+
+# Too aggressive, marketing/SEO
+User-agent: SemrushBot-SA
+Disallow: /
+
+# Marketing/SEO
+User-agent: AhrefsBot
+Disallow: /
+
+# Marketing/SEO
+User-agent: dotbot
+Disallow: /
+
+# Marketing/SEO
+User-agent: rogerbot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Huwei something or another, badly behaved
+User-agent: AspiegelBot
+Disallow: /
+
+# Marketing/SEO
+User-agent: ZoominfoBot
+Disallow: /
+
+# YandexBot is a dickhead, too aggressive
+User-agent: Yandex
+Disallow: /
+
+# Marketing/SEO
+User-agent: MJ12bot
+Disallow: /
+
+# Marketing/SEO
+User-agent: DataForSeoBot
+Disallow: /
+
+# Used for Alexa, I guess, who cares
+User-agent: Amazonbot
+Disallow: /
+
+# No
+User-agent: turnitinbot
+Disallow: /
+
+User-agent: Turnitin
+Disallow: /
+
+# Does not respect * directives
+User-agent: Seekport Crawler
+Disallow: /
+
+# Fairly certain that this is an LLM data vacuum
+User-agent: ClaudeBot
+Disallow: /
+
+# Same
+User-agent: Google-Extended
+Disallow: /
+
+# Marketing
+User-agent: serpstatbot
+Disallow: /
+
+# Marketing/SEO
+User-agent: barkrowler
+Disallow: /
+
+# Very aggressive, used for TikTok or something
+User-agent: Bytedance
+User-agent: Bytespider
+User-agent: TikTokSpider
+Disallow: /
+
+# Facebook
+User-agent: meta-externalagent
+Disallow: /
+
+# OpenAI
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+# Marketing/SEO
+User-agent: AwarioRssBot
+User-agent: AwarioSmartBot
+Disallow: /
+
+# AI slop
+User-Agent: ImagesiftBot
+Disallow: /
+
+User-Agent: Crawlspace
+Disallow: /
