@@ -105,3 +105,27 @@ p {
         }
     }
 }
+
+.follow-us {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 60px 80px;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        & a {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: fit-content;
+            font-size: 1.5rem;
+            padding: 24px;
+            background: var(--light-blue);
+            color: black;
+        }
+    }
+}
