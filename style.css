@@ -101,6 +101,15 @@ p {
     background: var(--light-blue);
     color: black;
     border-radius: 8px;
+
+    &:hover {
+        background: var(--dark-blue);
+        color: white;
+
+        & * {
+            filter: invert(100%);
+        }
+    }
 }
 
 .hero {
