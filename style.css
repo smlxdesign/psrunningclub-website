@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Ronzino";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url("/assets/fonts/Ronzino-Regular.woff2") format("woff2-variations");
+}
+
+@font-face {
+    font-family: "Ronzino";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    src: url("/assets/fonts/Ronzino-Bold.woff2") format("woff2-variations");
+}
+
+@font-face {
+    font-family: "Ronzino";
+    font-style: oblique;
+    font-display: swap;
+    font-weight: 400;
+    src: url("/assets/fonts/Ronzino-Oblique.woff2") format("woff2-variations");
+}
+
+@font-face {
+    font-family: "Ronzino";
+    font-style: oblique;
+    font-display: swap;
+    font-weight: 700;
+    src: url("/assets/fonts/Ronzino-BoldOblique.woff2")
+        format("woff2-variations");
+}
+
+@font-face {
+    font-family: "Tanklager Kompakt";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url("/assets/fonts/Tanklager-Kompakt.woff2") format("woff2-variations");
+}
+
+* {
+    font-family: "Ronzino", sans-serif, system-ui;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Tanklager Kompakt", sans-serif, system-ui;
+}
+
+h1 {
+    font-size: 4rem;
+}
