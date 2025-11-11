@@ -137,7 +137,7 @@ strong {
         object-fit: cover;
         object-position: 0 100%;
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
         aspect-ratio: 8/5;
     }
 }
@@ -146,6 +146,10 @@ strong {
     .hero {
         flex-direction: row-reverse;
         align-items: end;
+
+        & img {
+            max-width: 400px;
+        }
     }
 }
 
