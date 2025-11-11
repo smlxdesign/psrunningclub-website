@@ -136,6 +136,7 @@ p {
     flex-direction: column;
     gap: 24px;
     padding: 60px 80px;
+    background: var(--light-blue);
 
     & > div {
         display: flex;
@@ -144,8 +145,11 @@ p {
         & > article {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 16px;
             max-width: 420px;
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
 
             & > blockquote {
                 font-size: 1.25rem;
