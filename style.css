@@ -126,6 +126,7 @@ p {
             padding: 24px;
             background: var(--light-blue);
             color: black;
+            border-radius: 8px;
         }
     }
 }
