@@ -76,6 +76,7 @@ h1,
 h2,
 h3 {
     font-family: "Tanklager Kompakt", sans-serif, system-ui;
+    line-height: 1.1;
 }
 
 h1 {
