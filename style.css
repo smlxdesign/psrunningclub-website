@@ -91,6 +91,18 @@ p {
     font-size: 1.25rem;
 }
 
+.button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: fit-content;
+    font-size: 1.5rem;
+    padding: 24px;
+    background: var(--light-blue);
+    color: black;
+    border-radius: 8px;
+}
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -165,18 +177,6 @@ p {
         display: flex;
         flex-direction: column;
         gap: 16px;
-
-        & a {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            width: fit-content;
-            font-size: 1.5rem;
-            padding: 24px;
-            background: var(--light-blue);
-            color: black;
-            border-radius: 8px;
-        }
     }
 }
 
