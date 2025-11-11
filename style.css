@@ -70,6 +70,7 @@
 
     font-family: "Ronzino", sans-serif, system-ui;
     font-weight: 400;
+    font-size: 1.25rem;
 }
 
 h1,
@@ -85,10 +86,6 @@ h1 {
 
 h2 {
     font-size: clamp(1.85rem, 1.668rem + 0.727vw, 2.25rem);
-}
-
-p {
-    font-size: 1.25rem;
 }
 
 .button {
@@ -209,8 +206,8 @@ p {
             border-radius: 8px;
             padding: 24px;
 
-            & > blockquote {
-                font-size: 1.25rem;
+            & > footer {
+                font-size: 1rem;
             }
         }
     }
