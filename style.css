@@ -111,18 +111,21 @@ p {
 .good-to-know {
     display: flex;
     justify-content: space-between;
+    gap: 24px;
     padding: 60px var(--side-padding);
+    flex-wrap: wrap;
 
     & > div {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         gap: 8px;
         align-items: center;
         justify-content: center;
         background: var(--dark-blue);
         color: white;
         width: 170px;
-        aspect-ratio: 1;
+        height: 170px;
         padding: 24px;
         border-radius: calc(infinity * 1px);
 
