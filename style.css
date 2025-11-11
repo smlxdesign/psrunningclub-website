@@ -214,12 +214,20 @@ h2 {
 
 .website-footer {
     display: flex;
+    flex-direction: column;
+    gap: 24px;
     justify-content: space-between;
-    align-items: center;
     padding: 20px var(--side-padding);
 
     & > .socials {
         display: flex;
         gap: 16px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .website-footer {
+        flex-direction: row;
+        align-items: center;
     }
 }
