@@ -130,3 +130,26 @@ p {
         }
     }
 }
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 60px 80px;
+
+    & > div {
+        display: flex;
+        gap: 16px;
+
+        & > article {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 420px;
+
+            & > blockquote {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
