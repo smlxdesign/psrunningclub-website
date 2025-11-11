@@ -66,6 +66,10 @@ h2 {
     font-size: 2.5rem;
 }
 
+p {
+    font-size: 1.25rem;
+}
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -74,7 +78,6 @@ h2 {
     background: var(--light-blue);
 
     p {
-        font-size: 1.25rem;
         max-width: 50ch;
     }
 }
