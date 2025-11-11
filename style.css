@@ -88,6 +88,10 @@ h2 {
     font-size: clamp(1.85rem, 1.668rem + 0.727vw, 2.25rem);
 }
 
+strong {
+    font-weight: 700;
+}
+
 .button {
     display: flex;
     align-items: center;
