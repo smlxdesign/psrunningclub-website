@@ -100,8 +100,15 @@ p {
     padding: 100px var(--side-padding);
     background: var(--light-blue);
 
-    & p {
-        max-width: 50ch;
+    & > .details {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-wrap: balance;
+
+        & p {
+            max-width: 50ch;
+        }
     }
 
     & img {
