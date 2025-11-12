@@ -70,7 +70,7 @@
 
     font-family: "Ronzino", sans-serif, system-ui;
     font-weight: 400;
-    font-size: clamp(1.125rem, 1.068rem + 0.227vw, 1.25rem);
+    font-size: clamp(1rem, 0.9375rem + 0.25vw, 1.125rem);
 }
 
 h1,
