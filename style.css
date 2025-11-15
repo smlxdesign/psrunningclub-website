@@ -110,6 +110,10 @@ strong {
             filter: invert(100%);
         }
     }
+
+    & > img {
+        height: 24px;
+    }
 }
 
 .hero {
