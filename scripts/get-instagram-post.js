@@ -30,14 +30,19 @@ await writeFile(
   originialHtml.replace(
     containerElementRegex,
     `
-    <instagram-post>
-      <video controls width="350">
-        <source src="${latestPost.media_url}" />
-      </video>
-      <div>
-        <p>Postad av <a href="https://instagram.com/${latestPost.username}">@${latestPost.username}</a></p>
-      </div>
-    </instagram-post>
+      <instagram-post>
+          <video controls width="350">
+              <source src="${latestPost.media_url}">
+          </video>
+          <div>
+              <p>
+                  Postad av
+                  <a href="https://instagram.com/${latestPost.username}"
+                      >@$ { latestPost.username}</a
+                  >
+              </p>
+          </div>
+      </instagram-post>
   `.trim(),
   ),
 );
