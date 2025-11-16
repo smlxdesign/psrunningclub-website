@@ -196,6 +196,24 @@ strong {
         flex-direction: column;
         gap: 16px;
     }
+
+    & instagram-post {
+        position: absolute;
+        right: var(--side-padding);
+        translate: 20px -60px;
+        rotate: 4deg;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 16px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 2px 4px 90px 3px rgba(0, 0, 0, 0.1);
+
+        & a {
+            color: var(--dark-blue);
+        }
+    }
 }
 
 .testimonials {
