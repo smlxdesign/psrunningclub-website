@@ -46,4 +46,3 @@ await writeFile(
   `.trim(),
   ),
 );
-console.dir(data, { depth: 6 });
