@@ -38,5 +38,5 @@ jobs:
         run: |
           if $PUSH; then
             git commit -m "chore: update IG post"
-            git push origin $BRANCH
+            git push origin main
           fi
