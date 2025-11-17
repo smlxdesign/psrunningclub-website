@@ -4,6 +4,6 @@ Website for client
 
 ## License
 
-Page text and media is licensed under [CC-BY 4.0](./LICENSE_CC-BY-4.0)
+Page text and media is copyrighted.
 
 Code is licensed under [GPL-3.0](./LICENSE_GPL-3.0-or-later)
