@@ -19,7 +19,7 @@ const data = await fetch(
 });
 
 const latestPost = data.data
-  .trim((post) => {
+  .filter((post) => {
     return !!post.media_url;
   })
   .toSorted((a, b) => {
