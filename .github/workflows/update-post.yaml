@@ -23,3 +23,11 @@ jobs:
         run: touch .env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > .env
       - name: Run update script
         run: node get-instagram-post.js
+      - name: Setup git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Commit and push to GitHub
+        run: |
+          git commit .
+          git push origin $BRANCH
