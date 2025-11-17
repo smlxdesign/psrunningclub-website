@@ -17,6 +17,8 @@ jobs:
   update_post:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Copy environment variables
         run: touch .env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > .env
       - name: Run update script
