@@ -27,13 +27,11 @@ const latestPost = data.data
   })[0];
 
 const hash = crypto.createHash("sha256");
+const hashedLatestPost = hash.update(JSON.stringify(latestPost)).digest("hex");
 
 const cachedPost = await readFile("./cache", "utf-8");
 
-if (
-  hash.update(JSON.stringify(latestPost)).digest("hex") !==
-  hash.update(JSON.stringify(cachedPost)).digest("hex")
-) {
+if (hashedLatestPost !== cachedPost) {
   const originialHtml = await readFile("../index.html", "utf-8");
 
   const containerElementRegex = /(<instagram-post>)(.*)(<\/instagram-post>)/gs;
@@ -60,8 +58,5 @@ if (
     ),
   );
 
-  await writeFile(
-    "./cache",
-    hash.update(JSON.stringify(latestPost)).digest("hex"),
-  );
+  await writeFile("./cache", hashedLatestPost);
 }
