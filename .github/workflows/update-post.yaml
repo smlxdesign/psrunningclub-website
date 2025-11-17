@@ -11,13 +11,13 @@ env:
 
 defaults:
   run:
-    working-directory: ./scripts
+    working-directory: scripts
 
 jobs:
   update_post:
     runs-on: ubuntu-latest
     steps:
       - name: Copy environment variables
-        run: touch ./.env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > ./.env
+        run: touch .env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > .env
       - name: Run update script
-        run: node ./get-instagram-post.js
+        run: node get-instagram-post.js
