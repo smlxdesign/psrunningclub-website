@@ -5,6 +5,9 @@ on:
     # Run workflow every hour
     - cron: "0 * * * *"
 
+permissions:
+  contents: write
+
 env:
   account_id: ${{ secrets.ACCOUNT_ID }}
   authorization_key: ${{ secrets.AUTHORIZATION_KEY }}
