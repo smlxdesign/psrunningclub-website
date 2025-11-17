@@ -17,9 +17,13 @@ const data = await fetch(
   return res.json();
 });
 
-const latestPost = data.data.toSorted((a, b) => {
-  return new Date(b.timestamp) - new Date(a.timestamp);
-})[0];
+const latestPost = data.data
+  .trim((post) => {
+    return !!post.media_url;
+  })
+  .toSorted((a, b) => {
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  })[0];
 
 const originialHtml = await readFile("../index.html", "utf-8");
 
