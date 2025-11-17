@@ -14,6 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Copy environment variables
-        run: printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > ./scripts/.env
+        run: touch ./scripts/.env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > ./scripts/.env
       - name: Run update script
         run: node ./scripts/get-instagram-post.js
