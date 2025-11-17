@@ -49,7 +49,7 @@ if (hashedLatestPost !== cachedPost) {
                 <p>
                     Postad av
                     <a href="https://instagram.com/${latestPost.username}"
-                        >@$ { latestPost.username}</a
+                        >@${latestPost.username}</a
                     >
                 </p>
             </div>
