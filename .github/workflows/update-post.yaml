@@ -1,0 +1,18 @@
+name: Update Post
+on:
+  schedule:
+    # Run workflow every hour
+    - cron: "0 * * * *"
+
+env:
+  account_id: ${{ secrets.ACCOUNT_ID }}
+  authorization_key: ${{ secrets.AUTHORIZATION_KEY }}
+
+jobs:
+  update_post:
+    runs-on: node:22
+    steps:
+      - name: Copy environment variables
+        run: printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > ./scripts/.env
+      - name: Run update script
+        run: node ./scripts/get-instagram-post.js
