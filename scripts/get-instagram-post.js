@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from "node:fs/promises";
+import * as crypto from "node:crypto";
 
 process.loadEnvFile();
 
@@ -25,28 +26,42 @@ const latestPost = data.data
     return new Date(b.timestamp) - new Date(a.timestamp);
   })[0];
 
-const originialHtml = await readFile("../index.html", "utf-8");
+const hash = crypto.createHash("sha256");
 
-const containerElementRegex = /(<instagram-post>)(.*)(<\/instagram-post>)/gs;
+const cachedPost = await readFile("./cache", "utf-8");
 
-await writeFile(
-  "../index.html",
-  originialHtml.replace(
-    containerElementRegex,
-    `
-      <instagram-post>
-          <video controls width="350">
-              <source src="${latestPost.media_url}">
-          </video>
-          <div>
-              <p>
-                  Postad av
-                  <a href="https://instagram.com/${latestPost.username}"
-                      >@$ { latestPost.username}</a
-                  >
-              </p>
-          </div>
-      </instagram-post>
-  `.trim(),
-  ),
-);
+if (
+  hash.update(JSON.stringify(latestPost)).digest("hex") !==
+  hash.update(JSON.stringify(cachedPost)).digest("hex")
+) {
+  const originialHtml = await readFile("../index.html", "utf-8");
+
+  const containerElementRegex = /(<instagram-post>)(.*)(<\/instagram-post>)/gs;
+
+  await writeFile(
+    "../index.html",
+    originialHtml.replace(
+      containerElementRegex,
+      `
+        <instagram-post>
+            <video controls width="350">
+                <source src="${latestPost.media_url}">
+            </video>
+            <div>
+                <p>
+                    Postad av
+                    <a href="https://instagram.com/${latestPost.username}"
+                        >@$ { latestPost.username}</a
+                    >
+                </p>
+            </div>
+        </instagram-post>
+    `.trim(),
+    ),
+  );
+
+  await writeFile(
+    "./cache",
+    hash.update(JSON.stringify(latestPost)).digest("hex"),
+  );
+}
