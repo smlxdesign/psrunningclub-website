@@ -222,7 +222,7 @@ strong {
 
 @media screen and (min-width: 600px) {
     .follow-us instagram-post {
-        width: 320px;
+        width: 280px;
         rotate: 4deg;
     }
 }
@@ -231,14 +231,14 @@ strong {
     .follow-us instagram-post {
         position: absolute;
         right: var(--side-padding);
-        translate: 20px -60px;
-        width: 280px;
+        translate: 20px -120px;
+        width: 220px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .follow-us instagram-post {
-        width: 340px;
+        width: 300px;
     }
 }
 
