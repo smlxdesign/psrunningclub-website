@@ -210,6 +210,8 @@ strong {
 
         & video {
             width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
         }
 
         & a {
