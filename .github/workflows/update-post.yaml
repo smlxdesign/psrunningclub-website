@@ -11,7 +11,7 @@ env:
 
 jobs:
   update_post:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: Copy environment variables
         run: printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > ./scripts/.env
