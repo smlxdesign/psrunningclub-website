@@ -139,7 +139,7 @@ strong {
     & img {
         border-radius: 8px;
         object-fit: cover;
-        object-position: 0 80%;
+        object-position: 0 50%;
         width: 100%;
         max-width: 600px;
         height: auto;
