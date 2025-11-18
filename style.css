@@ -285,6 +285,11 @@ strong {
     & > .socials {
         display: flex;
         gap: 16px;
+
+        & > a:hover {
+            filter: invert(36%) sepia(15%) saturate(1748%) hue-rotate(166deg)
+                brightness(93%) contrast(102%);
+        }
     }
 }
 
