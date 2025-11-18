@@ -51,7 +51,6 @@ if (hashedLatestPost !== cachedPost) {
             }
             <div>
                 <p>
-                    Postad av
                     <a href="https://instagram.com/${latestPost.username}"
                         >@${latestPost.username}</a
                     >
