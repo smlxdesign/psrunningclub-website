@@ -43,7 +43,7 @@ if (hashedLatestPost !== cachedPost) {
       `
         <instagram-post>
             ${
-              media_type === "VIDEO" ?
+              latestPost.media_type === "VIDEO" ?
               `<video controls width="350">
                 <source src="${latestPost.media_url}">
               </video>`
