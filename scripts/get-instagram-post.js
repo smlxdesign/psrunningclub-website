@@ -8,7 +8,7 @@ process.loadEnvFile();
 const API_URL = "https://graph.instagram.com/v24.0";
 
 const data = await fetch(
-  `${API_URL}/${process.env.ACCOUNT_ID}/media?fields=username,media_url`,
+  `${API_URL}/${process.env.ACCOUNT_ID}/media?fields=username,media_url,media_type,thumbnail_url`,
   {
     headers: {
       Authorization: `Bearer ${process.env.AUTHORIZATION_KEY}`,
@@ -42,12 +42,15 @@ if (hashedLatestPost !== cachedPost) {
       containerElementRegex,
       `
         <instagram-post>
-            <video controls width="350">
+            ${
+              latestPost.media_type === "VIDEO" ?
+              `<video controls width="350" poster="${latestPost.thumbnail_url}">
                 <source src="${latestPost.media_url}">
-            </video>
+              </video>`
+              : `<img width="350" src="${latestPost.media_url}" />`
+            }
             <div>
                 <p>
-                    Postad av
                     <a href="https://instagram.com/${latestPost.username}"
                         >@${latestPost.username}</a
                     >
