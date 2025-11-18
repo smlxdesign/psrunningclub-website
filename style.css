@@ -158,6 +158,12 @@ strong {
     }
 }
 
+@media screen and (min-width: 1400px) {
+    .hero img {
+        max-width: 600px;
+    }
+}
+
 .good-to-know {
     display: flex;
     justify-content: space-between;
