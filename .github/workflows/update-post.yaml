@@ -1,4 +1,4 @@
-name: Update Post
+name: Update Post & Deploy
 on:
   workflow_dispatch:
   schedule:
@@ -12,34 +12,25 @@ env:
   account_id: ${{ secrets.ACCOUNT_ID }}
   authorization_key: ${{ secrets.AUTHORIZATION_KEY }}
 
-defaults:
-  run:
-    working-directory: scripts
-
 jobs:
   update_post:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Copy environment variables
-        run: touch .env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > .env
+        run: touch scripts/.env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > scripts/.env
       - name: Run update script
         run: node get-instagram-post.js
-      - name: Setup git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Add changes
-        run: |
-          if git add --all; then
-            echo "PUSH=true" >> $GITHUB_ENV
-          else
-            echo "PUSH=false" >> $GITHUB_ENV
-          fi
-      - name: Commit and push to GitHub
-        run: |
-          if $PUSH; then
-            git commit -m "chore: update IG post"
-            git push origin main
-          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
