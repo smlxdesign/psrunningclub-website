@@ -23,7 +23,7 @@ jobs:
       - name: Copy environment variables
         run: touch scripts/.env && printf "ACCOUNT_ID=${{ env.account_id }} \nAUTHORIZATION_KEY=${{ env.authorization_key }}\n" > scripts/.env
       - name: Run update script
-        run: node scripts/get-instagram-post.js
+        run: cd scripts && node get-instagram-post.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
