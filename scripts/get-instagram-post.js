@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from "node:fs/promises";
-import * as crypto from "node:crypto";
 
 process.loadEnvFile();
 
@@ -26,28 +25,22 @@ const latestPost = data.data
     return new Date(b.timestamp) - new Date(a.timestamp);
   })[0];
 
-const hash = crypto.createHash("sha256");
-const hashedLatestPost = hash.update(JSON.stringify(latestPost)).digest("hex");
+const originialHtml = await readFile("../index.html", "utf-8");
 
-const cachedPost = await readFile("./cache", "utf-8");
+const containerElementRegex = /(<instagram-post>)(.*)(<\/instagram-post>)/gs;
 
-if (hashedLatestPost !== cachedPost) {
-  const originialHtml = await readFile("../index.html", "utf-8");
-
-  const containerElementRegex = /(<instagram-post>)(.*)(<\/instagram-post>)/gs;
-
-  await writeFile(
-    "../index.html",
-    originialHtml.replace(
-      containerElementRegex,
-      `
+await writeFile(
+  "../index.html",
+  originialHtml.replace(
+    containerElementRegex,
+    `
         <instagram-post>
             ${
-              latestPost.media_type === "VIDEO" ?
-              `<video controls width="350" poster="${latestPost.thumbnail_url}">
+              latestPost.media_type === "VIDEO"
+                ? `<video controls width="350" poster="${latestPost.thumbnail_url}">
                 <source src="${latestPost.media_url}">
               </video>`
-              : `<img width="350" src="${latestPost.media_url}" />`
+                : `<img width="350" src="${latestPost.media_url}" />`
             }
             <div>
                 <p>
@@ -58,8 +51,5 @@ if (hashedLatestPost !== cachedPost) {
             </div>
         </instagram-post>
     `.trim(),
-    ),
-  );
-
-  await writeFile("./cache", hashedLatestPost);
-}
+  ),
+);
