@@ -1,6 +1,7 @@
 name: Update Post & Deploy
 on:
   workflow_dispatch:
+  push:
   schedule:
     # Run workflow every hour
     - cron: "0 * * * *"
@@ -30,7 +31,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: '.'
+          path: "."
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
