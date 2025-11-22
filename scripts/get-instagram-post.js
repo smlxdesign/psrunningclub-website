@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile } from "node:fs/promises";
+import { loadEnvFile, env } from "node:process";
 
-process.loadEnvFile();
+loadEnvFile();
 
 const API_URL = "https://graph.instagram.com/v24.0";
 
 const data = await fetch(
-    `${API_URL}/${process.env.ACCOUNT_ID}/media?fields=username,media_url,media_type,thumbnail_url`,
+    `${API_URL}/${env.ACCOUNT_ID}/media?fields=username,media_url,media_type,thumbnail_url`,
     {
         headers: {
-            Authorization: `Bearer ${process.env.AUTHORIZATION_KEY}`,
+            Authorization: `Bearer ${env.AUTHORIZATION_KEY}`,
         },
     },
 ).then((res) => {
