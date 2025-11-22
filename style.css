@@ -114,6 +114,14 @@ strong {
     & > img {
         height: 24px;
     }
+
+    &.white {
+        background: white;
+
+        &:hover {
+            background: var(--dark-blue);
+        }
+    }
 }
 
 .hero {
