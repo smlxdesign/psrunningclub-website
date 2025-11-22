@@ -40,8 +40,14 @@
 }
 
 :root {
-    --light-blue: #75c8ef;
-    --dark-blue: #2a608e;
+    --background: #ffffff;
+    --background-2: #75c8ef;
+
+    --foreground-text: #000000;
+    --foreground-text-2: #ffffff;
+
+    --foreground-container: #75c8ef;
+    --foreground-container-2: #2a608e;
 
     --side-padding: 40px;
 }
@@ -73,6 +79,11 @@
     font-size: clamp(1rem, 0.9375rem + 0.25vw, 1.125rem);
 }
 
+body {
+    background: var(--background);
+    color: var(--foreground-text);
+}
+
 h1,
 h2,
 h3 {
@@ -98,13 +109,13 @@ strong {
     gap: 16px;
     width: fit-content;
     padding: 24px;
-    background: var(--light-blue);
-    color: black;
+    background: var(--foreground-container);
+    color: var(--foreground-text);
     border-radius: 8px;
 
     &:hover {
-        background: var(--dark-blue);
-        color: white;
+        background: var(--foreground-container-2);
+        color: var(--foreground-text-2);
 
         & * {
             filter: invert(100%);
@@ -116,10 +127,10 @@ strong {
     }
 
     &.white {
-        background: white;
+        background: var(--background);
 
         &:hover {
-            background: var(--dark-blue);
+            background: var(--foreground-container-2);
         }
     }
 }
@@ -131,7 +142,7 @@ strong {
     align-items: start;
     gap: 48px;
     padding: 100px var(--side-padding);
-    background: var(--light-blue);
+    background: var(--background-2);
 
     & > .details {
         display: flex;
@@ -186,8 +197,8 @@ strong {
         gap: 8px;
         align-items: center;
         justify-content: center;
-        background: var(--dark-blue);
-        color: white;
+        background: var(--foreground-container-2);
+        color: var(--foreground-text-2);
         width: 170px;
         height: 170px;
         padding: 24px;
@@ -218,7 +229,7 @@ strong {
         gap: 20px;
         padding: 16px;
         margin-top: 32px;
-        background: white;
+        background: var(--background);
         border-radius: 8px;
         box-shadow: 2px 4px 90px 3px rgba(0, 0, 0, 0.1);
 
@@ -229,7 +240,7 @@ strong {
         }
 
         & a {
-            color: var(--dark-blue);
+            color: var(--foreground-text);
         }
     }
 }
@@ -261,7 +272,7 @@ strong {
     flex-direction: column;
     gap: 24px;
     padding: 60px var(--side-padding);
-    background: var(--light-blue);
+    background: var(--background-2);
 
     & > div {
         display: flex;
@@ -272,7 +283,7 @@ strong {
             flex-direction: column;
             gap: 16px;
             max-width: 420px;
-            background: white;
+            background: var(--background);
             border-radius: 8px;
             padding: 24px;
 
@@ -313,5 +324,5 @@ strong {
     flex-direction: column;
     gap: 48px;
     padding: 100px var(--side-padding);
-    background: var(--light-blue);
+    background: var(--background-2);
 }
