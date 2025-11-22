@@ -307,3 +307,11 @@ strong {
         align-items: center;
     }
 }
+
+.notfound-main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 100px var(--side-padding);
+    background: var(--light-blue);
+}
