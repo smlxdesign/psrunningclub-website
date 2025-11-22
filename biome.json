@@ -3,5 +3,11 @@
     "formatter": {
         "indentStyle": "space",
         "indentWidth": 4
+    },
+    "html": {
+        "formatter": {
+            "enabled": true,
+            "selfCloseVoidElements": "always"
+        }
     }
 }
