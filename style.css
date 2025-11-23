@@ -326,7 +326,7 @@ svg {
 
     & > .socials {
         display: flex;
-        gap: 16px;
+        gap: 20px;
 
         & > a {
             color: var(--foreground-text);
