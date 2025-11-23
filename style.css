@@ -52,6 +52,19 @@
     --side-padding: 40px;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #151d29;
+        --background-2: var(--background);
+
+        --foreground-text: #e6edf7;
+        --foreground-text-2: var(--foreground-text);
+
+        --foreground-container: #1a283e;
+        --foreground-container-2: #365481;
+    }
+}
+
 @media screen and (min-width: 800px) {
     :root {
         --side-padding: 80px;
