@@ -103,6 +103,10 @@ strong {
     font-weight: 700;
 }
 
+svg {
+    display: block;
+}
+
 .button {
     display: flex;
     align-items: center;
@@ -116,10 +120,6 @@ strong {
     &:hover {
         background: var(--foreground-container-2);
         color: var(--foreground-text-2);
-
-        & * {
-            filter: invert(100%);
-        }
     }
 
     & > img {
@@ -305,9 +305,16 @@ strong {
         display: flex;
         gap: 16px;
 
+        & > a {
+            color: var(--foreground-text);
+
+            &:hover {
+                color: var(--foreground-container-2);
+            }
+        }
+
         & > a:hover {
-            filter: invert(36%) sepia(15%) saturate(1748%) hue-rotate(166deg)
-                brightness(93%) contrast(102%);
+            color: var(--foreground-container-2);
         }
     }
 }
