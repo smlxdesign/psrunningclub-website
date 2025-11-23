@@ -49,6 +49,8 @@
     --foreground-container: #75c8ef;
     --foreground-container-2: #2a608e;
 
+    --foreground-card: #ffffff;
+
     --side-padding: 40px;
 }
 
@@ -62,6 +64,8 @@
 
         --foreground-container: #1a283e;
         --foreground-container-2: #365481;
+
+        --foreground-card: var(--foreground-container);
     }
 }
 
@@ -242,7 +246,7 @@ svg {
         gap: 20px;
         padding: 16px;
         margin-top: 32px;
-        background: var(--background);
+        background: var(--foreground-card);
         border-radius: 8px;
         box-shadow: 2px 4px 90px 3px rgba(0, 0, 0, 0.1);
 
@@ -280,6 +284,12 @@ svg {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .follow-us instagram-post {
+        box-shadow: none;
+    }
+}
+
 .testimonials {
     display: flex;
     flex-direction: column;
@@ -296,7 +306,7 @@ svg {
             flex-direction: column;
             gap: 16px;
             max-width: 420px;
-            background: var(--background);
+            background: var(--foreground-card);
             border-radius: 8px;
             padding: 24px;
 
