@@ -54,6 +54,21 @@
     --side-padding: 40px;
 }
 
+@media (prefers-contrast: more) {
+    :root {
+        --background: #ffffff;
+        --background-2: #ffffff;
+
+        --foreground-text: #000000;
+        --foreground-text-2: #000000;
+
+        --foreground-container: #ffffff;
+        --foreground-container-2: #ffffff;
+
+        --foreground-card: #ffffff;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #151d29;
@@ -66,6 +81,21 @@
         --foreground-container-2: #365481;
 
         --foreground-card: var(--foreground-container);
+    }
+}
+
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    :root {
+        --background: #000000;
+        --background-2: #000000;
+
+        --foreground-text: #ffffff;
+        --foreground-text-2: #ffffff;
+
+        --foreground-container: #000000;
+        --foreground-container-2: #000000;
+
+        --foreground-card: #000000;
     }
 }
 
@@ -164,6 +194,16 @@ svg {
     }
 }
 
+@media (forced-colors: active), (prefers-contrast: more) {
+    .button {
+        outline: 1px solid;
+    }
+
+    .button:hover {
+        outline: 2px solid;
+    }
+}
+
 header {
     position: sticky;
     top: 0;
@@ -174,6 +214,12 @@ header {
     justify-content: center;
     background: var(--foreground-container-2);
     color: var(--foreground-text-2);
+}
+
+@media (forced-colors: active), (prefers-contrast: more) {
+    header {
+        border-bottom: 2px solid;
+    }
 }
 
 .hero {
@@ -248,6 +294,12 @@ header {
         & * {
             text-align: center;
         }
+    }
+}
+
+@media (forced-colors: active), (prefers-contrast: more) {
+    .good-to-know > div {
+        outline: 1px solid;
     }
 }
 
@@ -341,6 +393,12 @@ header {
     }
 }
 
+@media (forced-colors: active), (prefers-contrast: more) {
+    .testimonials > div > article {
+        outline: 1px solid;
+    }
+}
+
 .website-footer {
     display: flex;
     flex-direction: column;
@@ -370,6 +428,19 @@ header {
     .website-footer {
         flex-direction: row;
         align-items: center;
+    }
+}
+
+@media (forced-colors: active), (prefers-contrast: more) {
+    .website-footer > .socials > a {
+        padding: 8px;
+        border-radius: 8px;
+
+        &:hover {
+            color: Canvas;
+            outline: 2px solid;
+            background: CanvasText;
+        }
     }
 }
 
