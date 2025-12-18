@@ -164,6 +164,18 @@ svg {
     }
 }
 
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 16px 16px;
+    justify-content: center;
+    background: var(--foreground-container-2);
+    color: var(--foreground-text-2);
+}
+
 .hero {
     display: flex;
     flex-direction: column;
