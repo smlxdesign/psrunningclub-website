@@ -8,7 +8,7 @@ loadEnvFile();
 const API_URL = "https://graph.instagram.com/v24.0";
 
 const data = await fetch(
-    `${API_URL}/${env.ACCOUNT_ID}/media?fields=username,media_url,media_type,thumbnail_url`,
+    `${API_URL}/${env.ACCOUNT_ID}/media?fields=username,media_url,media_type,thumbnail_url,caption`,
     {
         headers: {
             Authorization: `Bearer ${env.AUTHORIZATION_KEY}`,
@@ -47,7 +47,7 @@ await writeFile(
                 <p>
                     <a href="https://instagram.com/${latestPost.username}"
                         >@${latestPost.username}</a
-                    >
+                    > ${latestPost.caption}
                 </p>
             </div>
         </instagram-post>
