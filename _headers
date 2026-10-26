@@ -1,2 +1,2 @@
 /*
-  Content-Security-Policy: default-src: 'none'; font-src: 'self'; img-src 'self' *.cdninstagram.com; 
+  Content-Security-Policy: default-src 'none'; font-src 'self'; style-src 'self'; img-src 'self' *.cdninstagram.com; 
