@@ -8,7 +8,7 @@ loadEnvFile();
 const API_URL = "https://graph.instagram.com/v24.0";
 
 const data = await fetch(
-    `${API_URL}/${env.ACCOUNT_ID}/media?fields=username,media_url,media_type,thumbnail_url,caption`,
+    `${API_URL}/${env.ACCOUNT_ID}/media?fields=username,media_url,media_type,thumbnail_url,caption,alt_text`,
     {
         headers: {
             Authorization: `Bearer ${env.AUTHORIZATION_KEY}`,
@@ -41,7 +41,7 @@ await writeFile(
                     ? `<video controls width="350" poster="${latestPost.thumbnail_url}">
                 <source src="${latestPost.media_url}">
               </video>`
-                    : `<img width="350" src="${latestPost.media_url}" />`
+                    : `<img width="350" src="${latestPost.media_url}" alt="${latestPost.alt_text}" />`
             }
             <div>
                 <p>
